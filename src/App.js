@@ -5,6 +5,9 @@ import React, { Component } from 'react'
 import { Cards, Chart, CountryPicker }  from './components'
 import styles from './App.module.css'
 import { fecthData } from './api';
+
+import bigRona from './images/covid.png';
+
 class App extends Component {
     state = {
         data: {},
@@ -25,6 +28,7 @@ class App extends Component {
         const { data, country } = this.state
         return(
         <div className={styles.container}>
+            <img className={styles.image} src={bigRona} alt="big-rona"/>
             <Cards data={data}/>
             <CountryPicker handleCountryChange={this.handleCountryChange}/>
             <Chart data={data} country={country}/>
